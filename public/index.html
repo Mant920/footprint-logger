@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrace — Carbon Footprint Logger</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 4rem 2rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(64,145,108,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(72,202,228,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.12;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 720px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(82,183,136,0.1);
+      border: 1px solid var(--green-dim);
+      border-radius: 99px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green-bright);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--green-neon);
+      position: relative;
+    }
+    .hero-title em::after {
+      content: '';
+      position: absolute; bottom: 4px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-neon));
+      border-radius: 2px;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .features {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .features-label {
+      text-align: center;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-bright);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .features-title {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 3.5rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover {
+      border-color: var(--green-dim);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+    .footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-brand"><span>🌿</span> EcoTrace</a>
+    <div class="nav-links" id="navLinks">
+      <a href="/login">Sign In</a>
+      <a href="/register" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🌍 For a Greener Tomorrow</div>
+      <h1 class="hero-title">Track Your<br><em>Carbon Impact</em><br>Daily</h1>
+      <p class="hero-sub">Log activities, visualise your emissions, and get personalised tips to reduce your carbon footprint — one day at a time.</p>
+      <div class="hero-cta">
+        <a href="/register" class="btn btn-primary">Start Tracking Free</a>
+        <a href="/login" class="btn btn-outline">Sign In</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <p class="features-label">What you get</p>
+    <h2 class="features-title">Everything to manage your footprint</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Visual Summaries</h3>
+        <p>Pie and bar charts break down your emissions by category — transport, food, energy and more.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h3>Weekly Goals</h3>
+        <p>Set weekly reduction targets and track your progress with a live goal meter.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💡</span>
+        <h3>Personalised Tips</h3>
+        <p>Our insight engine analyses your behaviour and suggests concrete actions to cut emissions.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏘️</span>
+        <h3>Community Compare</h3>
+        <p>Benchmark your emissions against the community average and see where you stand.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔐</span>
+        <h3>Secure Accounts</h3>
+        <p>Your data is stored securely with encrypted authentication and private activity logs.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📅</span>
+        <h3>Streaks & History</h3>
+        <p>Build sustainable habits with logging streaks and a full history of your activity log.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>🌱 EcoTrace — DA Capstone Project &nbsp;|&nbsp; Built with Node.js, Express & MongoDB</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+    // If user is already logged in, update nav
+    document.addEventListener('DOMContentLoaded', () => {
+      if (API.isLoggedIn()) {
+        const u = API.getUser();
+        document.getElementById('navLinks').innerHTML = `
+          <a href="/dashboard">Dashboard</a>
+          <a href="#" data-logout class="btn btn-outline btn-sm">Log Out</a>
+        `;
+        document.querySelector('[data-logout]').addEventListener('click', (e) => { e.preventDefault(); logout(); });
+      }
+    });
+  </script>
+</body>
+</html>
