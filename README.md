@@ -35,7 +35,7 @@
 - Node.js v18+
 - MongoDB (local or MongoDB Atlas)
 
-### Installation
+### For Installation
 
 ```bash
 # 1. Clone the repo
@@ -143,21 +143,6 @@ All CO₂ values (kg per unit) are based on commonly cited lifecycle emissions d
 | Vegan meal          | 0.3           | meal  |
 | Electricity (ZA grid) | 0.23        | kWh   |
 
----
 
-## Submission Checklist
 
-- [x] Activity logging with CO₂ values and running totals
-- [x] Visual summary (pie + bar charts)
-- [x] Category filtering (food, transport, energy, other)
-- [x] Data persistence via MongoDB
-- [x] User registration and login (Node.js, Express, MongoDB)
-- [x] User-specific activity logs
-- [x] Dashboard with individual logs, total emissions, community compare
-- [x] Weekly summaries and streak tracking
-- [x] Insight engine with personalised tips
-- [x] Weekly reduction goals with progress tracking
 
----
-
-*Built as part of the DA Capstone programme.*
